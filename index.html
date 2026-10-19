@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <title>Operazione Compleanno</title>
+  <meta name="description" content="Contenuto classificato.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#11131b">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%92%3C/text%3E%3C/svg%3E">
+
+  <!-- Font: se Google Fonts non è raggiungibile si usano i font di sistema -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/config.js" defer></script>
+  <script src="js/games.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body data-theme="mission">
+  <div class="app">
+    <header class="topbar" id="topbar">
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-labelledby="progress-label">
+        <p class="progress__label" id="progress-label">REGALO DECIFRATO — <span id="progress-value">0</span>%</p>
+        <div class="progress__track"><div class="progress__fill" id="progress-fill"></div></div>
+      </div>
+      <button class="icon-btn" id="audio-toggle" type="button" aria-pressed="true" aria-label="Audio attivo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="speaker" d="M4 9h4l5-4v14l-5-4H4z"/><path class="waves" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/><path class="mute" d="M16 9l6 6M22 9l-6 6"/></svg>
+      </button>
+    </header>
+
+    <main class="stage" id="stage" tabindex="-1"></main>
+  </div>
+
+  <!-- messaggi brevi (feedback giochi) -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- modal riutilizzabile -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="icon-btn modal__close" type="button" data-close aria-label="Chiudi">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <noscript><p class="noscript">Per decifrare il regalo serve JavaScript attivo.</p></noscript>
+</body>
+</html>
