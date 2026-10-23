@@ -1094,8 +1094,8 @@ img { max-width: 100%; display: block; }
   height: 44px;
   border: 0;
   background: none;
-  color: #fff;
-  opacity: 0.4;
+  color: #f87f7f;
+  opacity: 0.6;
   font-size: 1.1rem;
   cursor: pointer;
   transition: opacity 0.3s, transform 0.3s;

@@ -79,21 +79,21 @@ const CONFIG = {
     questions: [ // TODO: sostituisci con domande vostre
       {
         q: 'Qual è stata la mia relazione più stabile durante quest’estate?',
-        answers: ['Quella con te, ovviamente', 'Quella con il frigorifero', 'Quella con l’aria condizionata', 'Quella con il computer'],
-        correct: 2,
+        answers: ['Quella con te, ovviamente', 'Quella con l’aria condizionata', 'Quella con il frigorifero', 'Quella con il computer'],
+        correct: 1,
         right: 'Confermo. È stata dura, ma alla fine siamo riusciti a trovare un equilibrio in questo triangolo amoroso. ❤️',
         wrong: 'Dopo tutto quello che abbiamo passato insieme, io e il condizionatore ci aspettavamo più riconoscenza.',
       },
       {
-        q: 'Chi dei due dice “cinque minuti e sono pronto/a” mentendo spudoratamente?',
-        answers: ['Tu', 'Io', 'Entrambi'],
-        correct: 1,
-        right: 'Risposta dolorosamente corretta.',
+        q: 'Chi dei due dice “cinque minuti e arrivo” mentendo spudoratamente?',
+        answers: ['Riccardo', 'Valentina', 'Entrambi'],
+        correct: 0,
+        right: 'Risposta dolorosamente corretta. 🥲',
         wrong: 'Il sistema rileva una lieve distorsione della realtà.',
       },
       {
         q: 'Quando dormiamo insieme, come viene suddiviso equamente il letto?',
-        answers: ['50% a testa, come in ogni coppia civile', '60% a te, 40% a me', '90% a te, 10% a me, se sono fortunato', 'Il letto è suo. Io sono un ospite occasionale'],
+        answers: ['50% a testa, come in ogni coppia civile', '60% a te, 40% a me', '90% a te, 10% a me, se sono fortunato', 'Il letto è tuo. Io sono un ospite occasionale'],
         correct: 2,
         right: 'Esatto! Il sistema conferma che il tuo concetto di spazio personale è piuttosto… espansivo. ❤️',
         wrong: 'Risposta non compatibile con i dati raccolti sul campo. Il mio lato del letto non è d’accordo.',
@@ -109,8 +109,8 @@ const CONFIG = {
         q: 'Di fronte a un problema apparentemente irrisolvibile, qual è la tua soluzione filosofica preferita?',
         answers: ['Manteniamo la calma e ragioniamo.', 'Non te sta a preoccupà.', 'Che dobbiamo fa? Ce dobbiamo sparà?', 'Scine ca scine, ma ca scine ‘n tutt’ no.'],
         correct: 2,
-        right: 'Dopo anni di studi, il sistema conferma che la filosofia abruzzese è superiore a qualsiasi tecnica di problem solving.',
-        wrong: 'Scine ca scine… ma questa risposta proprio no.',
+        right: 'Dopo anni di studi, il sistema conferma che la filosofia abruzzese è superiore a qualsiasi tecnica di problem solving. 🧠',
+        wrong: 'Scine ca scine… ma questa risposta no.',
       },
       {
         q: 'Cosa stai per scoprire?',
@@ -141,39 +141,68 @@ const CONFIG = {
      Se cambi le parole devi ricalcolare lo schema (posizioni e incroci):
      la console del browser segnala eventuali conflitti.
 
-     Schema attuale (10 righe × 9 colonne):
-         . . . . S . C . .
-         V A C C I N O . .
-         . . . . R . L . .
-         C U C C I O L O .
-         R . O . N . A . Z
-         I . D . G A R Z A
-         C . A . A . E . M
-         E . . . . . . . P
-         T . . . . F U S A
-         O S S O . . . . .
      ------------------------------------------------------------------- */
   crossword: {
     title: 'Test 2 — Cruciverba classificato',
-    intro: 'Completa lo schema. Le caselle con il cerchio nascondono qualcosa.',
+    intro: 'Un cruciverba fatto su misura per te. Tra le tue passioni si nasconde qualcosa, riuscirai a scoprirlo?',
     allowHints: true, // pulsante "Aiutino" che rivela la lettera selezionata
-    words: [ // TODO: placeholder a tema veterinario
-      { answer: 'SIRINGA',  row: 0, col: 4, dir: 'down',   clue: 'Non è un’arma, ma i pazienti a quattro zampe la temono parecchio' },
-      { answer: 'COLLARE',  row: 0, col: 6, dir: 'down',   clue: 'Quello elisabettiano è il più odiato dai pazienti' },
-      { answer: 'VACCINO',  row: 1, col: 0, dir: 'across', clue: 'Si fa una volta l’anno, tra un biscotto e una protesta' },
-      { answer: 'CUCCIOLO', row: 3, col: 0, dir: 'across', clue: 'Piccolo, tenerissimo e già pronto a distruggere le scarpe' },
-      { answer: 'CRICETO',  row: 3, col: 0, dir: 'down',   clue: 'Corre tutta la notte sulla ruota senza andare da nessuna parte' },
-      { answer: 'CODA',     row: 3, col: 2, dir: 'down',   clue: 'Il cane la scodinzola, gli umani la fanno in posta' },
-      { answer: 'ZAMPA',    row: 4, col: 8, dir: 'down',   clue: 'Si dà per salutare, se si è un bravo cane' },
-      { answer: 'GARZA',    row: 5, col: 4, dir: 'across', clue: 'Si avvolge sulle ferite, poi il paziente prova subito a toglierla' },
-      { answer: 'FUSA',     row: 8, col: 5, dir: 'across', clue: 'Il motorino del gatto soddisfatto' },
-      { answer: 'OSSO',     row: 9, col: 0, dir: 'across', clue: 'Lo si sotterra in giardino per i tempi duri' },
+    words: [
+      {
+        answer: 'COLLARE',
+        row: 0, col: 1, dir: 'across',
+        clue: 'Quello elisabettiano è il più odiato dai pazienti.'
+      },
+      {
+        answer: 'CROCCANTINI',
+        row: 0, col: 1, dir: 'down',
+        clue: 'Lo strumento diplomatico preferito per negoziare con pazienti poco collaborativi.'
+      },
+      {
+        answer: 'GOJO',
+        row: 2, col: 0, dir: 'across',
+        clue: 'Ha gli occhi più belli della serie, ma preferisce non mostrarli.'
+      },
+      {
+        answer: 'KUZCO',
+        row: 2, col: 6, dir: 'down',
+        clue: 'Il suo più grande errore? Aver licenziato la persona sbagliata.'
+      },
+      {
+        answer: 'MUSHU',
+        row: 3, col: 5, dir: 'across',
+        clue: 'Doveva essere un grande drago protettore. È arrivata la versione tascabile.'
+      },
+      {
+        answer: 'NEZUKO',
+        row: 6, col: 1, dir: 'across',
+        clue: 'Il suo monolocale è di legno, portatile e decisamente poco luminoso.'
+      },
+      {
+        answer: 'LEVI',
+        row: 7, col: 7, dir: 'down',
+        clue: 'L’incubo dei giganti e di chi lascia le briciole sul tavolo.'
+      },
+      {
+        answer: 'EDNA',
+        row: 8, col: 7, dir: 'across',
+        clue: 'La stilista che ha dichiarato guerra ai mantelli. Per ottime ragioni.'
+      },
+      {
+        answer: 'ADE',
+        row: 8, col: 10, dir: 'down',
+        clue: 'Gestisce gli inferi, ma il suo vero problema è la gestione della rabbia.'
+      },
+      {
+        answer: 'MICROCHIP',
+        row: 10, col: 0, dir: 'across',
+        clue: 'Un documento d’identità che non puoi dimenticare a casa.'
+      }
     ],
     secret: 'SPA',
     mystery: [
-      { row: 0, col: 4 }, // S di SIRINGA
-      { row: 7, col: 8 }, // P di ZAMPA
-      { row: 1, col: 1 }, // A di VACCINO
+      { row: 3, col: 7 },  // S di MUSHU
+      { row: 10, col: 8 }, // P di MICROCHIP
+      { row: 8, col: 10 }, // A di EDNA / ADE
     ],
     complete: {
       label: 'NUOVO INDIZIO SBLOCCATO',
@@ -284,12 +313,12 @@ const CONFIG = {
     heroAlt: 'La struttura che ci aspetta',
     logo: '',                                      // es. 'assets/images/final-logo.png' (facoltativo)
     title: 'BUON COMPLEANNO ❤️',
-    subtitle: 'Ti porto via per un po’.',
+    subtitle: '',
     reveal: 'UN SOGGIORNO PER NOI DUE IN UNA SPA',
     place: {
-      name: 'Villa Anitori', 
-      location: 'Loro Piceno (MC)', 
-      date: '30/10/2026',   
+      name: 'Villa Anitori',
+      location: 'Loro Piceno (MC)',
+      date: '30/10/2026',
     },
     includes: [
       { icon: '🫧', text: 'Percorso benessere esclusivo' },
@@ -298,18 +327,18 @@ const CONFIG = {
       { icon: '🛏️', text: 'Pernottamento' },
     ],
     extra: 'E soprattutto io, che purtroppo ero incluso nel pacchetto.',
-    dedication: 'Buon compleanno, {nickname}. Te lo meriti tutto, il relax. Anche quello di sopportarmi.&nbsp;— R.', // TODO
+    dedication: 'Ancora tanti auguri, {nickname}. ❤️<br>Spero che questa sorpresa ti abbia fatto sorridere almeno quanto tu fai sorridere me.', // TODO
     // compaiono qualche secondo dopo
     outro: {
       label: 'MISSIONE COMPLETATA',
       lines: [
-        'Ma un regalo digitale sarebbe stato un po’ triste.',
-        'Guarda dentro la busta.',
+        'Ma dopo tutto questo lavoro, direi che ti meriti qualcosa di più concreto.',
+        'C’è ancora una piccola sorpresa per te.',
       ],
       cta: 'APRI LA SECONDA BUSTA ❤️',
-      afterCta: 'Quella vera, di carta. Dai, aprila 💌',
+      afterCta: 'Dai, aprila 💌',
     },
-    outroDelayMs: 4500,
+    outroDelayMs: 6000,
   },
 
   /* -------------------------------------------------------------------
@@ -317,7 +346,7 @@ const CONFIG = {
      ------------------------------------------------------------------- */
   secret: {
     title: 'Hai trovato il cuore segreto',
-    text: 'Qui puoi scrivere una dedica più lunga e personale. Solo per chi tocca i cuoricini nascosti.', // TODO
+    text: 'Trovare 4 foto decenti di noi è stato più difficile che creare questo sito. Prometto che in futuro ne faremo molte di più, perché di ricordi da immortalare insieme ne abbiamo ancora tantissimi. ❤️',
     // foto della galleria (facoltative). Se un file manca viene mostrato un riquadro vuoto.
     photos: [ // TODO
       { src: 'assets/images/us-1.jpg', alt: 'Noi due' },
