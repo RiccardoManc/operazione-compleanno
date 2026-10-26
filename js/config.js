@@ -100,14 +100,14 @@ const CONFIG = {
       },
       {
         q: 'Qual è il tuo superpotere segreto?',
-        answers: ['Riuscire a trovare qualsiasi oggetto smarrito.', 'Addormentarti ovunque, in qualsiasi momento e in qualsiasi posizione.', 'Prevedere il futuro.'],
+        answers: ['Riuscire a trovare qualsiasi oggetto smarrito', 'Addormentarti ovunque, in qualsiasi momento e in qualsiasi posizione', 'Prevedere il futuro'],
         correct: 1,
         right: 'La NASA sta ancora studiando come tu riesca a passare da sveglia a profondamente addormentata in 0,3 secondi. ❤️',
         wrong: 'Il sistema suggerisce di rifletterci meglio. Magari dopo un pisolino.',
       },
       {
         q: 'Di fronte a un problema apparentemente irrisolvibile, qual è la tua soluzione filosofica preferita?',
-        answers: ['Manteniamo la calma e ragioniamo.', 'Non te sta a preoccupà.', 'Che dobbiamo fa? Ce dobbiamo sparà?', 'Scine ca scine, ma ca scine ‘n tutt’ no.'],
+        answers: ['Manteniamo la calma e ragioniamo', 'Non te sta a preoccupà', 'Che dobbiamo fa? Ce dobbiamo sparà?', 'Scine ca scine, ma ca scine ‘n tutt’ no'],
         correct: 2,
         right: 'Dopo anni di studi, il sistema conferma che la filosofia abruzzese è superiore a qualsiasi tecnica di problem solving. 🧠',
         wrong: 'Scine ca scine… ma questa risposta no.',
@@ -155,7 +155,7 @@ const CONFIG = {
       {
         answer: 'CROCCANTINI',
         row: 0, col: 1, dir: 'down',
-        clue: 'Lo strumento diplomatico preferito per negoziare con pazienti poco collaborativi.'
+        clue: 'Lo strumento preferito per negoziare con pazienti a quattro zampe poco collaborativi.'
       },
       {
         answer: 'GOJO',
@@ -222,7 +222,7 @@ const CONFIG = {
     items: [
       { icon: '🩱', label: 'Costume',          ok: true,  msg: 'Ottima scelta. Potrebbe esserci dell’acqua.' },
       { icon: '💻', label: 'Computer',         ok: false, msg: 'Assolutamente no.' },
-      { icon: '🥋', label: 'Accappatoio',      ok: false,  msg: 'Lascialo, dove andiamo ce n\'è uno più morbido del nostro.' },
+      { icon: '🥋', label: 'Accappatoio',      ok: false,  msg: 'Lascialo, dove andiamo ce n’è uno più morbido del nostro.' },
       { icon: '🥾', label: 'Scarponi',         ok: false, msg: 'Non è quel tipo di gita. L’unica fatica sarà alzarsi dal lettino.' },
       { icon: '🩴', label: 'Ciabatte',         ok: true,  msg: 'Il sistema approva le ciabatte.' },
       { icon: '🤿', label: 'Maschera e pinne',          ok: false, msg: 'Acqua sì, ma non quel tipo di acqua.' },
@@ -256,8 +256,9 @@ const CONFIG = {
     releasedEarly: 'Non mollare proprio adesso.',
     result: [
       'ANALISI COMPLETATA',
-      'Livello di stress: <strong>preoccupante</strong>.',
+      'Livello di stress: <strong>preoccupante</strong>',
     ],
+    continueLabel: 'PROSEGUI',
     complete: {
       label: 'TRATTAMENTO CONSIGLIATO',
       clue: 'MASSAGGIO',
@@ -282,8 +283,9 @@ const CONFIG = {
       'Il sistema ha preso una decisione importante.',
       'Quella sera non cuciniamo noi.',
     ],
+    continueLabel: 'PROSEGUI',
     complete: {
-      label: 'NUOVO INDIZIO',
+      label: 'NUOVO INDIZIO SBLOCCATO',
       clue: 'CENA INCLUSA',
       text: 'E niente piatti da lavare.',
     },
@@ -295,7 +297,7 @@ const CONFIG = {
   almost: {
     title: 'Riepilogo indizi',
     // indizi mostrati nella lista, in ordine
-    clues: ['SPA', 'MASSAGGIO', 'CENA', 'RELAX'],
+    clues: ['SPA', 'RELAX', 'MASSAGGIO', 'CENA'],
     text: 'Manca ancora un elemento fondamentale.',
     cta: 'SCOPRI L’ULTIMO 1%',
     lastPiece: 'TU ❤️',
@@ -326,7 +328,7 @@ const CONFIG = {
       { icon: '🍷', text: 'Cena' },
       { icon: '🛏️', text: 'Pernottamento' },
     ],
-    extra: 'E soprattutto io, che purtroppo ero incluso nel pacchetto.',
+    extra: 'E soprattutto io, che purtroppo sono incluso nel pacchetto.',
     dedication: 'Ancora tanti auguri, {nickname}. ❤️<br>Spero che questa sorpresa ti abbia fatto sorridere almeno quanto tu fai sorridere me.', // TODO
     // compaiono qualche secondo dopo
     outro: {

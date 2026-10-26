@@ -287,6 +287,8 @@ img { max-width: 100%; display: block; }
 .btn--wide { width: 100%; }
 .btn--big { min-height: 64px; font-size: 1.08rem; width: 100%; }
 
+.game__next { margin-top: 14px; width: 100%; }
+
 .btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .btn-row .btn { flex: 1 1 140px; }
 
@@ -924,6 +926,8 @@ img { max-width: 100%; display: block; }
 .stress__result { text-align: center; }
 .stress__result p { margin: 0 0 8px; font-size: 1.1rem; }
 .stress__result p:first-child { font-family: var(--font-mono); letter-spacing: 0.14em; color: var(--ok); font-size: 0.9rem; }
+/* a test finito il cerchio non intercetta il tocco: arriva alla sezione */
+.is-success .hold { pointer-events: none; }
 
 
 /* =====================================================================
@@ -985,7 +989,8 @@ img { max-width: 100%; display: block; }
 
 .dinner__result { margin-top: 22px; text-align: center; }
 .dinner__result p { margin: 0 0 8px; font-size: 1.1rem; }
-.dinner__result p:last-child { font-weight: 700; }
+.dinner__result p:last-of-type { font-weight: 700; }
+.is-won .slot .btn { pointer-events: none; }
 
 
 /* =====================================================================

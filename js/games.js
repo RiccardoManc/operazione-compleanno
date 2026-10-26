@@ -19,6 +19,25 @@ function gameHead(c, extraClass = '') {
     </header>`;
 }
 
+// pulsante "Prosegui" dopo il risultato: l'utente va avanti quando ha letto
+// (vale anche un tocco ovunque nella sezione)
+function waitContinue(section, container, label) {
+  container.insertAdjacentHTML('beforeend',
+    `<button class="btn btn--primary game__next reveal" type="button">${fill(label)}</button>`);
+  const next = $('.game__next', container);
+  next.focus({ preventScroll: true });
+  return new Promise((resolve) => {
+    const go = () => {
+      section.removeEventListener('pointerdown', go);
+      next.removeEventListener('click', go);
+      Sound.play('tap');
+      resolve();
+    };
+    section.addEventListener('pointerdown', go);
+    next.addEventListener('click', go);
+  });
+}
+
 // animazione "vola da A a B" usata da cruciverba e valigia
 function flyTo(content, fromEl, toEl, className = 'fly') {
   const from = fromEl.getBoundingClientRect();
@@ -471,7 +490,7 @@ Games.crossword = {
         Sound.play(wrong.length ? 'error' : 'ok');
         status.textContent = wrong.length
           ? `${wrong.length === 1 ? '1 lettera da rivedere' : `${wrong.length} lettere da rivedere`} (segnate con il puntino).`
-          : empty ? `Finora tutto giusto. Mancano ${empty} lettere.` : '';
+          : empty ? `Finora tutto giusto. ${empty === 1 ? 'Manca 1 lettera' : `Mancano ${empty} lettere`}.` : '';
       }
 
       if (act?.dataset.act === 'hint') {
@@ -754,6 +773,7 @@ Games.stress = {
         result.insertAdjacentHTML('beforeend', `<p class="reveal">${fill(line)}</p>`);
         await wait(900);
       }
+      await waitContinue(section, result, c.continueLabel);
       ctx.done();
     };
 
@@ -844,6 +864,7 @@ Games.dinner = {
         result.insertAdjacentHTML('beforeend', `<p class="reveal">${fill(line)}</p>`);
         await wait(1100);
       }
+      await waitContinue(section, result, c.continueLabel);
       ctx.done();
     }, { once: true });
   },
